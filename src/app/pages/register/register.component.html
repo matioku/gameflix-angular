@@ -1,0 +1,38 @@
+<div class="gf-auth">
+  <div class="card">
+    <h1>Inscription</h1>
+    <p class="muted">Crée ton compte GameFlix</p>
+
+    @if (errorMsg) {
+      <p class="error" role="alert">{{ errorMsg }}</p>
+    }
+
+    <form (ngSubmit)="submit()" #f="ngForm">
+      <label for="username">Pseudonyme</label>
+      <input id="username" name="username" type="text" [(ngModel)]="username" required minlength="2" />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" [(ngModel)]="email" required autocomplete="username" />
+
+      <label for="password">Mot de passe</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+        required
+        minlength="6"
+        autocomplete="new-password"
+      />
+
+      <button type="submit" [disabled]="f.invalid || !username || !email || !password">
+        Créer un compte
+      </button>
+    </form>
+
+    <p class="footer-link">
+      Déjà inscrit ?
+      <a routerLink="/login">Se connecter</a>
+    </p>
+  </div>
+</div>

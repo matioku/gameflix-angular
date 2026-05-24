@@ -1,0 +1,20 @@
+<div class="gf-home">
+  <div class="panel">
+    <h1>Bienvenue sur GameFlix</h1>
+    <p class="muted">Connexion réussie</p>
+
+    @if (loadingMe) {
+      <p class="info">Chargement du profil…</p>
+    } @else if (meError) {
+      <p class="error" role="alert">{{ meError }}</p>
+    } @else if (user) {
+      <p class="highlight">
+        Connecté en tant que <strong>{{ user.username }}</strong>
+        <span class="sep">•</span>
+        {{ user.email }}
+      </p>
+    }
+
+    <button type="button" (click)="logout()">Se déconnecter</button>
+  </div>
+</div>

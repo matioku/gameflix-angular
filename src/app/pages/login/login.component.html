@@ -1,0 +1,43 @@
+<div class="gf-auth">
+  <div class="card">
+    <h1>Connexion</h1>
+    <p class="muted">GameFlix — accès à ton espace</p>
+
+    @if (registeredMsg) {
+      <p class="success" role="status">{{ registeredMsg }}</p>
+    }
+
+    @if (errorMsg) {
+      <p class="error" role="alert">{{ errorMsg }}</p>
+    }
+
+    <form (ngSubmit)="submit()" #f="ngForm">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="email"
+        required
+        autocomplete="username"
+      />
+
+      <label for="password">Mot de passe</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+        required
+        autocomplete="current-password"
+      />
+
+      <button type="submit" [disabled]="f.invalid || !email || !password">Se connecter</button>
+    </form>
+
+    <p class="footer-link">
+      Pas encore de compte ?
+      <a routerLink="/register">Créer un compte</a>
+    </p>
+  </div>
+</div>

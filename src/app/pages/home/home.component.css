@@ -1,0 +1,63 @@
+.gf-home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.panel {
+  max-width: 480px;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.65rem;
+}
+
+.muted {
+  margin: 0 0 1.5rem;
+  color: #9ca3af;
+}
+
+.highlight {
+  font-size: 1rem;
+  color: #e5e7eb;
+  margin: 0 0 1.5rem;
+}
+
+.sep {
+  margin: 0 0.4rem;
+  color: #6b7280;
+}
+
+.info {
+  color: #93c5fd;
+  margin: 0 0 1.5rem;
+}
+
+.error {
+  color: #fecaca;
+  margin: 0 0 1rem;
+}
+
+button {
+  padding: 0.65rem 1.75rem;
+  border: none;
+  border-radius: 8px;
+  background: #374151;
+  color: #f9fafb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #4b5563;
+}
