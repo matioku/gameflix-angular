@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
-import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter } from '@angular/router';
 import { vi } from 'vitest';
 
@@ -16,8 +14,6 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [NavbarComponent],
       providers: [
-        provideHttpClient(),
-        provideHttpClientTesting(),
         provideRouter([]),
         {
           provide: AuthService,
@@ -63,7 +59,7 @@ describe('NavbarComponent', () => {
   it('appelle authService.logout() au clic sur "Déconnexion"', () => {
     const btn = fixture.debugElement.query(By.css('button'));
     expect(btn).toBeTruthy();
-    btn?.nativeElement.click();
+    btn.triggerEventHandler('click', {});
     expect(authService.logout).toHaveBeenCalledTimes(1);
   });
 });
