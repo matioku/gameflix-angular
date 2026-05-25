@@ -1,0 +1,51 @@
+<div class="gf-detail">
+  @if (loading) {
+    <p class="info">Chargement…</p>
+  } @else if (error) {
+    <p class="error" role="alert">{{ error }}</p>
+  } @else if (game) {
+    <a class="back" routerLink="/games">← Retour au catalogue</a>
+
+    <div class="panel">
+      @if (game.thumbnailUrl) {
+        <img class="cover" [src]="game.thumbnailUrl" [alt]="game.title" />
+      }
+
+      <div class="body">
+        <h1>{{ game.title }}</h1>
+
+        <div class="meta">
+          @if (game.genre) { <span>{{ game.genre }}</span> }
+          @if (game.platform) { <span>{{ game.platform }}</span> }
+          @if (game.releaseDate) { <span>{{ game.releaseDate }}</span> }
+          @if (game.rating != null) { <span>★ {{ getRating(game) }}</span> }
+        </div>
+
+        @if (game.description) {
+          <p class="desc">{{ game.description }}</p>
+        }
+
+        @if (game.videoUrl) {
+          @if (isVideoUrl(game.videoUrl)) {
+            <video class="video" controls>
+              <source [src]="game.videoUrl" />
+            </video>
+          } @else {
+            <a class="video-link" [href]="game.videoUrl" target="_blank" rel="noopener">
+              Voir la vidéo ↗
+            </a>
+          }
+        }
+
+        <button
+          class="btn-fav"
+          [class.active]="isFavorite"
+          [disabled]="favoriteLoading"
+          (click)="toggleFavorite()"
+        >
+          {{ isFavorite ? '♥ Retirer des favoris' : '♡ Ajouter aux favoris' }}
+        </button>
+      </div>
+    </div>
+  }
+</div>
