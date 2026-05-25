@@ -10,5 +10,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  protected readonly authService = inject(AuthService);
+  private readonly authService = inject(AuthService);
+
+  protected logout(): void {
+    this.authService.logout();
+  }
 }

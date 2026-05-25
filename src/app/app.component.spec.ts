@@ -57,4 +57,9 @@ describe('App (AppComponent)', () => {
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('app-navbar'))).toBeTruthy();
   });
+
+  it('affiche la navbar sur la route initiale "/" (pas encore redirigée)', () => {
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('app-navbar'))).toBeTruthy();
+  });
 });

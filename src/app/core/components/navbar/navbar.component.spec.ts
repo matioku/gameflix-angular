@@ -57,7 +57,7 @@ describe('NavbarComponent', () => {
   });
 
   it('appelle authService.logout() au clic sur "Déconnexion"', () => {
-    const btn = fixture.debugElement.query(By.css('button'));
+    const btn = fixture.debugElement.query(By.css('.logout-btn'));
     expect(btn).toBeTruthy();
     btn.triggerEventHandler('click', {});
     expect(authService.logout).toHaveBeenCalledTimes(1);

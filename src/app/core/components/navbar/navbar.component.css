@@ -37,7 +37,7 @@
   color: #f9fafb;
 }
 
-button {
+.logout-btn {
   margin-left: auto;
   padding: 0.4rem 0.9rem;
   border: 1px solid #374151;
@@ -49,7 +49,7 @@ button {
   transition: color 0.15s, border-color 0.15s;
 }
 
-button:hover {
+.logout-btn:hover {
   color: #f9fafb;
   border-color: #9ca3af;
 }
