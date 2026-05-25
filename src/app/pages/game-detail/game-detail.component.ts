@@ -44,7 +44,7 @@ export class GameDetailComponent implements OnInit {
 
     this.favoriteService.getFavorites().subscribe({
       next: favorites => {
-        this.isFavorite = favorites.some(f => f.id === id);
+        this.isFavorite = favorites.some(g => g.id === id);
       },
     });
   }
