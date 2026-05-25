@@ -20,11 +20,12 @@ export class App {
   private readonly navEnd = toSignal(
     this.router.events.pipe(
       filter((e): e is NavigationEnd => e instanceof NavigationEnd)
-    )
+    ),
+    { initialValue: { urlAfterRedirects: this.router.url } as NavigationEnd }
   );
 
   showNavbar = computed(() => {
-    const url = this.navEnd()?.urlAfterRedirects ?? this.router.url;
+    const url = this.navEnd().urlAfterRedirects;
     return !this.PUBLIC_ROUTES.some(r => url.startsWith(r));
   });
 }
