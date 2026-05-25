@@ -1,0 +1,13 @@
+<nav class="gf-nav">
+  <a class="logo" routerLink="/games">GameFlix</a>
+
+  <div class="links">
+    <a routerLink="/games" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Catalogue
+    </a>
+    <a routerLink="/favorites" routerLinkActive="active">Favoris</a>
+    <a routerLink="/history" routerLinkActive="active">Historique</a>
+  </div>
+
+  <button type="button" (click)="authService.logout()">Déconnexion</button>
+</nav>
