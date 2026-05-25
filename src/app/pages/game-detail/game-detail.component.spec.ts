@@ -4,15 +4,15 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
-import { GameDetail } from './game-detail.component';
+import { GameDetailComponent } from './game-detail.component';
 
-describe('GameDetail', () => {
-  let component: GameDetail;
-  let fixture: ComponentFixture<GameDetail>;
+describe('GameDetailComponent', () => {
+  let component: GameDetailComponent;
+  let fixture: ComponentFixture<GameDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GameDetail],
+      imports: [GameDetailComponent],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
@@ -30,7 +30,7 @@ describe('GameDetail', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GameDetail);
+    fixture = TestBed.createComponent(GameDetailComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
