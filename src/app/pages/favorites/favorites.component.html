@@ -1,0 +1,33 @@
+<div class="gf-favorites">
+  <h1 class="page-title">Mes Favoris</h1>
+
+  @if (loading) {
+    <p class="info">Chargement…</p>
+  } @else if (error) {
+    <p class="error" role="alert">{{ error }}</p>
+  } @else if (games.length === 0) {
+    <p class="muted">Aucun favori pour l'instant.</p>
+  } @else {
+    <div class="grid">
+      @for (game of games; track game.id) {
+        <div class="card">
+          @if (game.thumbnailUrl) {
+            <img class="thumb" [src]="game.thumbnailUrl" [alt]="game.title" />
+          } @else {
+            <div class="thumb thumb--placeholder"></div>
+          }
+          <div class="card-info">
+            <a class="title" [routerLink]="['/games', game.id]">{{ game.title }}</a>
+            <p class="meta">
+              <span>{{ game.genre ?? '—' }}</span>
+              <span class="sep">•</span>
+              <span>{{ game.platform ?? '—' }}</span>
+            </p>
+            <p class="rating">★ {{ getRating(game) }}</p>
+            <button class="btn-remove" (click)="remove(game.id)">Retirer</button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
