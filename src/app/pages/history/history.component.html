@@ -1,0 +1,27 @@
+<div class="gf-history">
+  <h1 class="page-title">Historique</h1>
+
+  @if (loading) {
+    <p class="info">Chargement…</p>
+  } @else if (error) {
+    <p class="error" role="alert">{{ error }}</p>
+  } @else if (entries.length === 0) {
+    <p class="muted">Aucun jeu visionné pour l'instant.</p>
+  } @else {
+    <ul class="list">
+      @for (entry of entries; track entry.game.id) {
+        <li class="item">
+          @if (entry.game.thumbnailUrl) {
+            <img class="thumb" [src]="entry.game.thumbnailUrl" [alt]="entry.game.title" />
+          } @else {
+            <div class="thumb thumb--placeholder"></div>
+          }
+          <div class="content">
+            <a class="title" [routerLink]="['/games', entry.game.id]">{{ entry.game.title }}</a>
+            <p class="date">{{ entry.viewedAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</div>

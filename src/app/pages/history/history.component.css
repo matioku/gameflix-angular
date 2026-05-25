@@ -1,0 +1,77 @@
+.gf-history {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.thumb {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.thumb--placeholder {
+  background: #1f2937;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #f9fafb;
+  margin-bottom: 0.25rem;
+}
+
+.title:hover {
+  color: #f472b6;
+}
+
+.date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.info {
+  color: #93c5fd;
+}
+
+.error {
+  color: #fecaca;
+}
+
+.muted {
+  color: #9ca3af;
+}
