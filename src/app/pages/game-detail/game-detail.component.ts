@@ -14,7 +14,7 @@ import { HistoryService } from '../../core/services/history.service';
   templateUrl: './game-detail.component.html',
   styleUrl: './game-detail.component.css',
 })
-export class GameDetail implements OnInit {
+export class GameDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly gameService = inject(GameService);
   private readonly favoriteService = inject(FavoriteService);
