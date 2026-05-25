@@ -1,0 +1,34 @@
+<div class="gf-games">
+  @if (loading) {
+    <p class="info">Chargement…</p>
+  } @else if (error) {
+    <p class="error" role="alert">{{ error }}</p>
+  } @else {
+    <h1 class="page-title">Catalogue</h1>
+
+    @if (games.length === 0) {
+      <p class="muted">Aucun jeu disponible.</p>
+    } @else {
+      <div class="grid">
+        @for (game of games; track game.id) {
+          <a class="card" [routerLink]="['/games', game.id]">
+            @if (game.thumbnailUrl) {
+              <img class="thumb" [src]="game.thumbnailUrl" [alt]="game.title" />
+            } @else {
+              <div class="thumb thumb--placeholder"></div>
+            }
+            <div class="card-info">
+              <p class="title">{{ game.title }}</p>
+              <p class="meta">
+                <span>{{ game.genre ?? '—' }}</span>
+                <span class="sep">•</span>
+                <span>{{ game.platform ?? '—' }}</span>
+              </p>
+              <p class="rating">★ {{ getRating(game) }}</p>
+            </div>
+          </a>
+        }
+      </div>
+    }
+  }
+</div>

@@ -1,0 +1,81 @@
+.gf-games {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb--placeholder {
+  background: #1f2937;
+}
+
+.card-info {
+  padding: 0.75rem;
+}
+
+.title {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.meta {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.sep {
+  margin: 0 0.3rem;
+  color: #6b7280;
+}
+
+.rating {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #fbbf24;
+}
+
+.info {
+  color: #93c5fd;
+}
+
+.error {
+  color: #fecaca;
+}
+
+.muted {
+  color: #9ca3af;
+}
